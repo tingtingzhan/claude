@@ -2,24 +2,29 @@
 
 #' @title To create a \link[utils]{zip} File with Only `.md` files
 #' 
-#' @param path \link[base]{character} scalar
+#' @param from \link[base]{character} scalar, input directory, 
+#' default value is the working directory `.`.
 #' 
+#' @param to \link[base]{character} scalar, input directory,
+#' default value is the `~/document` directory.
+#' 
+#' @importFrom utils zip
 #' @export
-zipSKILL = \(path = '.') {
+zipSKILL <- \(from = '.', to = '~/document') {
   
-  zipf <- path |>
+  filename <- from |>
     normalizePath() |>
-    basename() |>
+    basename()
+  
+  zipf <- filename |>
     sprintf(fmt = '%s.zip') |>
-    file.path(path, . = _)
+    file.path(to, . = _)
   
-  zipf |> 
-    file.remove() |> 
-    suppressWarnings()
+  if (file.exists(zipf)) file.remove(zipf)
   
-  list.files(pattern = '\\.md$', full.names = TRUE, recursive = TRUE) |>
+  list.files(path = from, pattern = '\\.md$', full.names = TRUE, recursive = TRUE) |>
     grepv(pattern = '_ignore', x = _, invert = TRUE) |>
-    utils::zip(zipfile = zipf, files = _)
+    zip(zipfile = zipf, files = _)
   
 }
 

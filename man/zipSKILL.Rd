@@ -4,10 +4,14 @@
 \alias{zipSKILL}
 \title{To create a \link[utils]{zip} File with Only \code{.md} files}
 \usage{
-zipSKILL(path = ".")
+zipSKILL(from = ".", to = "~/document")
 }
 \arguments{
-\item{path}{\link[base]{character} scalar}
+\item{from}{\link[base]{character} scalar, input directory,
+default value is the working directory \code{.}.}
+
+\item{to}{\link[base]{character} scalar, input directory,
+default value is the \verb{~/document} directory.}
 }
 \description{
 To create a \link[utils]{zip} File with Only \code{.md} files
