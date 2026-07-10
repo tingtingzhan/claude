@@ -1,0 +1,12 @@
+Package: claude
+Type: Package
+Title: claude
+Version: 0.1.0
+Description: claude.
+License: GPL-2
+Encoding: UTF-8
+Authors@R: c(person(given = "Tingting", family = "Zhan", role = c("aut", "cre"), email = c("tingtingzhan@gmail.com")))
+Language: en-US
+Depends: R (>= 4.6.0)
+Config/roxygen2/version: 8.0.0
+Config/roxygen2/markdown: TRUE
