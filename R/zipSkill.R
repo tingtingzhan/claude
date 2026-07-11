@@ -6,11 +6,13 @@
 #' default value is the working directory `.`.
 #' 
 #' @param to \link[base]{character} scalar, input directory,
-#' default value is the `~/document` directory.
+#' default value is the `~/Documents` directory.
+#' 
+#' @param pattern_exclude \link[base]{regex} (\link[base]{character} scalar)
 #' 
 #' @importFrom utils zip
 #' @export
-zipSKILL <- \(from = '.', to = '~/document') {
+zipSKILL <- \(from = '.', to = '~/Documents', pattern_exclude = '_ignore') {
   
   filename <- from |>
     normalizePath() |>

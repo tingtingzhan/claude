@@ -4,14 +4,16 @@
 \alias{zipSKILL}
 \title{To create a \link[utils]{zip} File with Only \code{.md} files}
 \usage{
-zipSKILL(from = ".", to = "~/document")
+zipSKILL(from = ".", to = "~/Documents", pattern_exclude = "_ignore")
 }
 \arguments{
 \item{from}{\link[base]{character} scalar, input directory,
 default value is the working directory \code{.}.}
 
 \item{to}{\link[base]{character} scalar, input directory,
-default value is the \verb{~/document} directory.}
+default value is the \verb{~/Documents} directory.}
+
+\item{pattern_exclude}{\link[base]{regex} (\link[base]{character} scalar)}
 }
 \description{
 To create a \link[utils]{zip} File with Only \code{.md} files
