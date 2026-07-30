@@ -5,7 +5,7 @@
 #' @param from \link[base]{character} scalar, input directory, 
 #' default value is the working directory `.`.
 #' 
-#' @param to \link[base]{character} scalar, input directory,
+#' @param to \link[base]{character} scalar, output directory,
 #' default value is the `~/Documents` directory.
 #' 
 #' @param extras,... additional parameters of the function

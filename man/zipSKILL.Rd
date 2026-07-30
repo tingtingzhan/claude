@@ -10,7 +10,7 @@ zipSKILL(from = ".", to = "~/Documents", extras = "-x _ignore/*", ...)
 \item{from}{\link[base]{character} scalar, input directory,
 default value is the working directory \code{.}.}
 
-\item{to}{\link[base]{character} scalar, input directory,
+\item{to}{\link[base]{character} scalar, output directory,
 default value is the \verb{~/Documents} directory.}
 
 \item{extras, ...}{additional parameters of the function

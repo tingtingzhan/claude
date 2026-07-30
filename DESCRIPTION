@@ -2,7 +2,7 @@ Package: claude
 Type: Package
 Title: claude
 Version: 0.1.0
-Description: claude.
+Description: Create SKILL File (.zip) for Claude. 
 License: GPL-2
 Encoding: UTF-8
 Authors@R: c(person(given = "Tingting", family = "Zhan", role = c("aut", "cre"), email = c("tingtingzhan@gmail.com")))
