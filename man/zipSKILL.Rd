@@ -2,9 +2,9 @@
 % Please edit documentation in R/zipSKILL.R
 \name{zipSKILL}
 \alias{zipSKILL}
-\title{To create a \link[utils]{zip} File with Only \code{.md} files}
+\title{To create a \link[utils]{zip} SKILL File for Claude}
 \usage{
-zipSKILL(from = ".", to = "~/Documents", pattern_exclude = "_ignore")
+zipSKILL(from = ".", to = "~/Documents", extras = "-x _ignore/*", ...)
 }
 \arguments{
 \item{from}{\link[base]{character} scalar, input directory,
@@ -13,8 +13,9 @@ default value is the working directory \code{.}.}
 \item{to}{\link[base]{character} scalar, input directory,
 default value is the \verb{~/Documents} directory.}
 
-\item{pattern_exclude}{\link[base]{regex} (\link[base]{character} scalar)}
+\item{extras, ...}{additional parameters of the function
+\link[utils]{zip}}
 }
 \description{
-To create a \link[utils]{zip} File with Only \code{.md} files
+To create a \link[utils]{zip} SKILL File for Claude
 }

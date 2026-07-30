@@ -1,6 +1,6 @@
 
 
-#' @title To create a \link[utils]{zip} File with Only `.md` files
+#' @title To create a \link[utils]{zip} SKILL File for Claude
 #' 
 #' @param from \link[base]{character} scalar, input directory, 
 #' default value is the working directory `.`.
@@ -8,11 +8,17 @@
 #' @param to \link[base]{character} scalar, input directory,
 #' default value is the `~/Documents` directory.
 #' 
-#' @param pattern_exclude \link[base]{regex} (\link[base]{character} scalar)
+#' @param extras,... additional parameters of the function
+#' \link[utils]{zip}
 #' 
 #' @importFrom utils zip
 #' @export
-zipSKILL <- \(from = '.', to = '~/Documents', pattern_exclude = '_ignore') {
+zipSKILL <- function(
+    from = '.', 
+    to = '~/Documents',
+    extras = '-x _ignore/*',
+    ...
+) {
   
   filename <- from |>
     normalizePath() |>
@@ -24,13 +30,15 @@ zipSKILL <- \(from = '.', to = '~/Documents', pattern_exclude = '_ignore') {
   
   if (file.exists(zipf)) file.remove(zipf)
   
+  old_dir <- setwd(from)
+  on.exit(setwd(old_dir), add = TRUE)
+  
   list.files(
     path = from, pattern = '\\.md$', 
     full.names = FALSE, # super important!!!
     recursive = TRUE
   ) |>
-    grepv(pattern = pattern_exclude, x = _, invert = TRUE) |>
-    zip(zipfile = zipf, files = _)
+    zip(zipfile = zipf, files = _, extras = extras, ...)
   
 }
 

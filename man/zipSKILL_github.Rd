@@ -2,17 +2,17 @@
 % Please edit documentation in R/zipSKILL_github.R
 \name{zipSKILL_github}
 \alias{zipSKILL_github}
-\title{To create a \link[utils]{zip} File from GitHub}
+\title{To create a \link[utils]{zip} SKILL File for Claude from GitHub}
 \usage{
 zipSKILL_github(repo, ...)
 }
 \arguments{
-\item{repo}{..}
+\item{repo}{\link[base]{character} scalar, in the format of \code{'[user]/[repo]'}}
 
-\item{...}{..}
+\item{...}{parameters of the function \code{\link[=zipSKILL]{zipSKILL()}}, except for \code{from}}
 }
 \description{
-To create a \link[utils]{zip} File from GitHub
+To create a \link[utils]{zip} SKILL File for Claude from GitHub
 }
 \examples{
 \dontrun{
