@@ -24,7 +24,11 @@ zipSKILL <- \(from = '.', to = '~/Documents', pattern_exclude = '_ignore') {
   
   if (file.exists(zipf)) file.remove(zipf)
   
-  list.files(path = from, pattern = '\\.md$', full.names = TRUE, recursive = TRUE) |>
+  list.files(
+    path = from, pattern = '\\.md$', 
+    full.names = FALSE, # super important!!!
+    recursive = TRUE
+  ) |>
     grepv(pattern = pattern_exclude, x = _, invert = TRUE) |>
     zip(zipfile = zipf, files = _)
   
