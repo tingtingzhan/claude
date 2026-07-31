@@ -2,20 +2,18 @@
 
 #' @title To create a \link[utils]{zip} SKILL File for Claude
 #' 
-#' @param from \link[base]{character} scalar, input directory, 
-#' default value is the working directory `.`.
+#' @param from \link[base]{character} scalar, input directory, default value is the working directory `.`.
 #' 
-#' @param to \link[base]{character} scalar, output directory,
-#' default value is the `~/Documents` directory.
+#' @param to \link[base]{character} scalar, output directory, default value is the `~/Documents` directory.
 #' 
-#' @param extras,... additional parameters of the function
-#' \link[utils]{zip}
+#' @param flags,extras,... additional parameters of the function \link[utils]{zip}
 #' 
 #' @importFrom utils zip
 #' @export
 zipSKILL <- function(
     from = '.', 
     to = '~/Documents',
+    flags = '-q',
     extras = '-x _ignore/*',
     ...
 ) {
@@ -38,7 +36,7 @@ zipSKILL <- function(
     full.names = FALSE, # super important!!!
     recursive = TRUE
   ) |>
-    zip(zipfile = zipf, files = _, extras = extras, ...)
+    zip(zipfile = zipf, files = _, flags = flags, extras = extras, ...)
   
 }
 
