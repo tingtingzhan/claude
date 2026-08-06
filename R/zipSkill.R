@@ -23,7 +23,8 @@ zipSKILL <- function(
     basename()
   
   zipf <- filename |>
-    sprintf(fmt = '%s.zip') |>
+    #sprintf(fmt = '%s.zip') |>
+    sprintf(fmt = '%s.skill') |>
     file.path(to, . = _)
   
   if (file.exists(zipf)) file.remove(zipf)

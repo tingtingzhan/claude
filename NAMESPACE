@@ -2,6 +2,8 @@
 
 export(zipSKILL)
 export(zipSKILL_github)
-importFrom(utils,download.file)
-importFrom(utils,unzip)
-importFrom(utils,zip)
+importFrom(utils,
+  download.file,
+  unzip,
+  zip
+)
