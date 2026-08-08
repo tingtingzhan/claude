@@ -2,7 +2,7 @@ Package: claude
 Type: Package
 Title: Create .skill File for Claude
 Version: 0.1.0
-Date: 2026-07-30
+Date: 2026-08-07
 Description: Create .skill File for Claude. 
 License: GPL-2
 Encoding: UTF-8
